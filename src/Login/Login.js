@@ -12,11 +12,11 @@ class Login extends React.Component{
     }
     handleLogin=(ev)=>{
         ev.preventDefault();
-        const history = createHashHistory()
+        const history = createHashHistory();
         let re = /\S+@\S+\.\S+/;
         if(re.test(this.state.userEmail)){
             if(this.validateUserEmailAndPassword(this.state.userEmail, this.state.password)){
-                history.push({pathname:"/search", state:{isLogin:false}});
+                history.push({pathname:"/search", state:{isLogin:true, email:this.state.userEmail}});
             }else{
                 history.push({pathname:"/", state:{isLogin:false}});
             }
