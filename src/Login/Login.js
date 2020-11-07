@@ -1,5 +1,5 @@
 import React from 'react';
-import { createHashHistory } from 'history'
+import { createBrowserHistory } from 'history'
 import './Login.css';
 import data from '../Data/data';
 class Login extends React.Component{
@@ -12,7 +12,7 @@ class Login extends React.Component{
     }
     handleLogin=(ev)=>{
         ev.preventDefault();
-        const history = createHashHistory();
+        const history = createBrowserHistory();
         let re = /\S+@\S+\.\S+/;
         if(re.test(this.state.userEmail)){
             if(this.validateUserEmailAndPassword(this.state.userEmail, this.state.password)){

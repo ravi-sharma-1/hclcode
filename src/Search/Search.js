@@ -1,6 +1,6 @@
 import React from 'react';
 import './Search.css';
-import { createHashHistory } from 'history';
+import { createBrowserHistory } from 'history';
 import data from '../Data/data';
 class Search extends React.Component{
     constructor(props){
@@ -13,7 +13,7 @@ class Search extends React.Component{
         }
     }
     componentWillMount(){
-        const history = createHashHistory();
+        const history = createBrowserHistory();
         if(this.props.location && !this.props.location.state.isLogin){
             history.push("/");
         }
