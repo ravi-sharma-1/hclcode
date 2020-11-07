@@ -1,7 +1,7 @@
 import React from 'react';
 import { createHashHistory } from 'history'
 import './Login.css';
-import data from '../Data/data'
+import data from '../Data/data';
 class Login extends React.Component{
     constructor(props){
       super(props);

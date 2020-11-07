@@ -1,12 +1,13 @@
 import React from 'react';
 import './Search.css';
-import { createHashHistory } from 'history'
+import { createHashHistory } from 'history';
+import data from '../Data/data';
 class Search extends React.Component{
     constructor(props){
         super(props);
         this.state={
             searchResults:[],
-            slectedSearchType:"",
+            slectedSearchType:"title",
             serachStr:"",
             searchTypeOption:[{name:"title", label:"Title"}, {name:"author", label:"Author"}, {name:"subject", label:"Subject"}]
         }
@@ -16,6 +17,19 @@ class Search extends React.Component{
         if(this.props.location && !this.props.location.state.isLogin){
             history.push("/");
         }
+    }
+    handleSearch=()=>{
+        console.log(this.state.slectedSearchType, this.state.serachStr);
+        this.setState({
+            searchResults :this.searchRecord(this.state.slectedSearchType, this.state.serachStr)
+        });
+    }
+
+    searchRecord(type, searchStr){
+        let results = data.bookSearchResults.filter((item)=>{
+            return item[type] === searchStr;
+        });
+        return results;
     }
 
     render(){
@@ -34,6 +48,7 @@ class Search extends React.Component{
                         serachStr:ev.target.value 
                     });
             }}/>
+            <input type="button" onClick={this.handleSearch} value="Search"/>
             </div>
             <table width="100%" border="1">
                <tr>
