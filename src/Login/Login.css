@@ -1,8 +1,5 @@
-.tableContainer{
-    width: 600px;
+.loginContainer{
+    width: 300px;
     margin: 0px auto;
 }
 
-.tableContainer table{
-    width:100%;
-}

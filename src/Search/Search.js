@@ -21,4 +21,4 @@ class Search extends React.Component{
     }
 }
 
-export default Login;
+export default Search;
