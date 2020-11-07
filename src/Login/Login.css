@@ -1,0 +1,8 @@
+.tableContainer{
+    width: 600px;
+    margin: 0px auto;
+}
+
+.tableContainer table{
+    width:100%;
+}
